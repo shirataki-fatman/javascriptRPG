@@ -10,16 +10,18 @@
         <textarea id="log" rows="5" cols="78"></textarea>
         </p>
         <script src="./src/field.js"></script>
-        <script type="text/javascript"><!--
-            var field = new Field("canvas", 20, 20);
-            var logger = new Logger("log");
-            var player = new Player(field, logger, 1, 1);
-            field.draw();
-        --></script>
-        <input type="button" value="up" onclick='player.move("up")'>
-        <input type="button" value="down" onclick='player.move("down")'>
-        <input type="button" value="left" onclick='player.move("left")'>
-        <input type="button" value="right" onclick='player.move("right")'>
+        <script src="./src/player.js"></script>
+        <script src="./src/logger.js"></script>
+        <script src="./src/game.js"></script>
+        <script type="text/javascript">
+            var game = new Game("canvas", "log");
+            game.draw();
+        </script>
+
+        <input type="button" value="up" onclick="game.moveUp()">
+        <input type="button" value="down" onclick="game.moveDown()">
+        <input type="button" value="left" onclick="game.moveLeft()">
+        <input type="button" value="right" onclick="game.moveRight()">
     </body>
 </html>
 
